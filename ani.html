@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Unbenanntes Dokument</title>
+</head>
+
+<body>
+
+<style>
+div.animation {
+    -webkit-animation: myfirst 5s infinite; 
+    animation: myfirst 5s infinite;
+	width:500px;
+	height:400px;
+	padding:10px;
+	background-color:yellow;
+	overflow:hidden;
+}
+
+@-webkit-keyframes myfirst {
+    from {background: green;}
+    to {background: yellow;}
+}
+@keyframes myfirst {
+    from {background: green;}
+    to {background: yellow;}
+}
+.text1 {
+	-webkit-animation: fromleft 3s infinite; 
+    animation: fromleft 3s infinite;
+	width:100px;
+	height:26px;
+}
+@-webkit-keyframes fromleft {
+    from {margin-left: -100px;}
+    50% {margin-left: 0px;}
+	to {margin-left: 600px;}
+}
+@keyframes fromleft {
+    from {margin-left: -100px;}
+    50% {margin-left: 0px;}
+	to {margin-left: 600px;}
+}
+</style>
+<div class="animation">
+	<p class="text1">Company x</p>
+	<p class="text2">Das ist unser Slogan</p>
+</div>
+</body>
+</html>
