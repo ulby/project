@@ -3,8 +3,9 @@ if(!isset($_POST["savebutton"])) $_POST["savebutton"] = "";
 if($_POST["savebutton"] == "Save") {
 	if( !empty($_POST["Name"]) && 
     !empty($_POST["Category"]) && 
-    !empty($_POST["Description"]) && 
+    !empty($_POST["Description"]) &&
 	!empty($_POST["Popularity"]) && 
+	preg_match("/^[1-5]+$/", $_POST["Popularity"]) !== 0 &&
 	!empty($_POST["big_image"]) && 
     !empty($_POST["thumbnail"]) ){
 	mysql_query("UPDATE products set Name='$_POST[Name]',Category='$_POST[Category]',Description='$_POST[Description]',Popularity=' $_POST[Popularity]',big_image='$_POST[big_image]',thumbnail='$_POST[thumbnail]' where ID='$_POST[versteckt]'");
@@ -42,7 +43,7 @@ while($zeile=mysql_fetch_assoc($products)) {
 	$key = $zeile["ID"];
 	$data[$key] = $zeile;
 }
-mysql_close($db_link);
+mysql_close();
 
 echo"<table cellspacing=0 >";
         echo "<tr>";
@@ -59,7 +60,7 @@ echo"<table cellspacing=0 >";
                      echo "<td><TEXTAREA rows=5 cols=30 name=$datenfeld>
 $wert</TEXTAREA></td>";
             } elseif ($datenfeld == "Popularity") {
-                     echo "<td><input type=number name=$datenfeld value='$wert'></td>";
+                     echo "<td><input type=number maxlength="1" name=$datenfeld value='$wert'></td>";
             } else {
                 echo "<td><input type=text name=$datenfeld value='$wert'></td>";
             }
