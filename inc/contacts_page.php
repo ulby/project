@@ -1,8 +1,10 @@
 <?php
 if(!isset($_POST["save"])) $_POST["save"] = "";
 if($_POST["save"] == "Save") {
+	$testing_email = $_POST["email"];
 	if( !empty($_POST["name"]) &&
 	!empty($_POST["email"]) &&
+	filter_var($testing_email, FILTER_VALIDATE_EMAIL) &&
 	!empty($_POST["message"]) &&
 	!empty($_POST["date"])) {
 		mysql_query("INSERT into contacts (Name,Email,Message,Date) values ('$_POST[name]','$_POST[email]','$_POST[message]','$_POST[date]')");
