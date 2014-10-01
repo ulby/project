@@ -6,9 +6,13 @@ if($_POST["savebutton"] == "Save") {
 	if($_POST["passinput1"] == $_POST["passinput2"]) {
 		echo "1";
 		$passinput = $_POST["passinput1"];
+		if(preg_match("/^.*(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$/", $passinput) !== 0) {
 		$newpass = md5($passinput);
 		mysql_query("UPDATE login set pass='$newpass'");
 		$feedback = "You password has been saved";
+		} else {
+			$feedback = "Password needs to be safe";
+		}
 	} else {
 		echo "2";
 		$feedback = "ERROR - Password needs to be iqual";
