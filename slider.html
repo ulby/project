@@ -1,0 +1,174 @@
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+}
+.container {
+	width: 900px;
+	height: 400px;
+	overflow: hidden;
+	background-color: #323232;
+}
+.roll {
+	width: 7150px;
+	height: 300px;
+	overflow: hidden;
+	margin-top: 40px;
+}
+.roll div.slide {
+	float: left;
+	width: 600px;
+	margin: 0 50px;
+}
+.roll div.slide:first-child {
+	margin-left: 200px;
+}
+.roll div.slide:last-child {
+	margin-left: 200px;
+}
+.roll div.slide:first-child {
+	width: 300px;
+}
+.roll div.slide:first-child img {
+	width: 100%;
+}
+.roll div.slide img {
+	width: 50%;
+	float: left;
+}
+.menu {
+	width: 940px;
+	height: 50px;
+	overflow: hidden;
+}
+.menu div.slide {
+	float: left;
+	padding: 5px;
+	margin: 0 5px;
+}
+.menu div.slide img {
+	width: 70px;
+}
+</style>
+<script type="text/javascript">
+$( document ).ready(function() {
+var zoom = '1.0';
+var z1 = '0';
+var res1 = z1*zoom;
+var z2 = '-450';
+var res2 = z2*zoom;
+var z3 = '-1850';
+var res3 = z3*zoom;
+var z4 = '-2550';
+var res4 = z4*zoom;
+var z5 = '-3250';
+var res5 = z5*zoom;
+
+
+
+$( "#1" ).click(function() {
+  $( "div.roll" ).animate({
+	    marginLeft: res1
+	});
+});
+$( "#2,#3" ).click(function() {
+  $( "div.roll" ).animate({
+	    marginLeft: res2
+	});
+});
+$( "#4,#5" ).click(function() {
+  $( "div.roll" ).animate({
+	    marginLeft: res3
+	});
+});
+$( "#6,#7" ).click(function() {
+  $( "div.roll" ).animate({
+	    marginLeft: res4
+	});
+});
+$( "#8,#9" ).click(function() {
+  $( "div.roll" ).animate({
+	    marginLeft: res5
+	});
+});
+$( "#10" ).click(function() {
+  $( "div.roll" ).animate({
+	    marginLeft: '-3250px'
+	});
+});
+
+
+$( ".small" ).click(function() {
+  $( ".roll .slide" ).animate({
+    width: '400px',
+    'margin': '0 150px'
+  });
+  $( ".roll .slide:first-child" ).animate({
+    width: '200px',
+    'margin-left': '200'
+  });
+});
+$( ".test" ).click(function() {
+  $( ".container" ).animate({
+    opacity: 0.25,
+    left: "+=50",
+    marginLeft: '-500px',
+    height: "toggle"
+  });
+});
+});
+</script>
+<a class="small" href="#">small</a>
+<a class="normal" href="#">normal</a>
+<a class="bigger" href="#">bigger</a>
+<div class="container">
+	<div class="menu">
+		<div class="slide">
+			<a id="1" href="#"><img src="img/slide.jpg"></a>
+		</div>
+		<div class="slide">
+			<a id="2" href="#"><img src="img/slide.jpg"></a>
+			<a id="3" href="#"><img src="img/slide.jpg"></a>
+		</div>
+		<div class="slide">
+			<a id="4" href="#"><img src="img/slide.jpg"></a>
+			<a id="5" href="#"><img src="img/slide.jpg"></a>
+		</div>
+		<div class="slide">
+			<a id="6" href="#"><img src="img/slide.jpg"></a>
+			<a id="7" href="#"><img src="img/slide.jpg"></a>
+		</div>
+		<div class="slide">
+			<a id="8" href="#"><img src="img/slide.jpg"></a>
+			<a id="9" href="#"><img src="img/slide.jpg"></a>
+		</div>
+		<div class="slide">
+			<a id="10" href="#"><img src="img/slide.jpg"></a>
+		</div>
+	</div>
+	<div class="roll">
+		<div class="slide">
+			<img src="img/slide.jpg">
+		</div>
+		<div class="slide">
+			<img src="img/slide.jpg">
+			<img src="img/slide.jpg">
+		</div>
+		<div class="slide">
+			<img src="img/slide.jpg">
+			<img src="img/slide.jpg">
+		</div>
+		<div class="slide">
+			<img src="img/slide.jpg">
+			<img src="img/slide.jpg">
+		</div>
+		<div class="slide">
+			<img src="img/slide.jpg">
+			<img src="img/slide.jpg">
+		</div>
+		<div class="slide">
+			<img src="img/slide.jpg">
+		</div>
+	</div>
+</div>
